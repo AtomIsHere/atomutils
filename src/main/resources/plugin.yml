@@ -1,0 +1,7 @@
+name: AtomUtils
+version: ${project.version}
+main: com.github.atomishere.atomutils.AtomUtils
+api-version: 1.13
+authors: [AtomIsHere]
+description: General utilities for helping with commands, services and more.
+website: https://github.com/AtomIsHere
