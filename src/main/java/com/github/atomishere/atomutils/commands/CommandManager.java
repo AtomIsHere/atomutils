@@ -28,38 +28,6 @@ public class CommandManager<T extends JavaPlugin> {
     private final T plugin;
 
     /**
-     * Load all commands in a package. (Experimental feature. I heard that the Reflections feature may not work depending on your os)
-     *
-     * @param pack Package to check.
-     * @param prefix will only load commands with this prefix.
-     */
-    public void loadCommands(Package pack, String prefix) {
-        List<ClassLoader> classLoadersList = new LinkedList<>();
-        classLoadersList.add(ClasspathHelper.contextClassLoader());
-        classLoadersList.add(ClasspathHelper.staticClassLoader());
-
-        Reflections reflections = new Reflections(new ConfigurationBuilder()
-                .setScanners(new SubTypesScanner(false), new ResourcesScanner())
-                .setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0])))
-                .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(pack.getName()))));
-
-        Set<Class<? extends AtomCommand>> classes = reflections.getSubTypesOf(AtomCommand.class);
-        for(Class commandClass : classes) {
-            if(!commandClass.getSimpleName().startsWith(prefix)) continue;
-
-            Class<? extends AtomCommand<T>> clazz;
-            try {
-                clazz = (Class<? extends AtomCommand<T>>) commandClass;
-            } catch(ClassCastException ex) {
-                plugin.getLogger().severe("Tried to register a command that does not belong to the plugin");
-                continue;
-            }
-
-            loadCommand(clazz, prefix);
-        }
-    }
-
-    /**
      * Load a command based on its class object.
      *
      * @param clazz command class.
