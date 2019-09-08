@@ -19,25 +19,28 @@ public class CommandManager<T extends JavaPlugin> {
     private final T plugin;
 
     /**
-     * Load a command based on its class object.
+     * Load a command based on its class object. (Requires class to be annotated with CommandParameters and CommandPermissions)
      *
      * @param clazz command class.
-     * @param prefix the prefix of the command.
      */
-    public void loadCommand(Class<? extends AtomCommand<T>> clazz, String prefix) {
+    public void loadCommand(Class<? extends AtomCommand<T>> clazz) {
+        CommandParameters params = clazz.getAnnotation(CommandParameters.class);
+        if(params == null) {
+            plugin.getLogger().warning("Not loading command " + clazz.getSimpleName() + ". Class does not have CommandParameters");
+            return;
+        }
+
         Constructor<? extends AtomCommand<T>> con;
         try {
             con = clazz.getConstructor(String.class, plugin.getClass());
         } catch(NoSuchMethodException e) {
-            plugin.getLogger().warning("Not loading command " + clazz.getSimpleName().replaceFirst(prefix, "") + ". Invalid Constructor!");
+            plugin.getLogger().warning("Not loading command " + params.commandName() + ". Invalid Constructor!");
             return;
         }
 
-        String commandName = clazz.getSimpleName().replaceFirst(prefix, "");
-
         AtomCommand<T> inst;
         try {
-            inst = con.newInstance(commandName, plugin);
+            inst = con.newInstance(params.commandName(), plugin);
         } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
             return;
@@ -47,19 +50,19 @@ public class CommandManager<T extends JavaPlugin> {
     }
 
     /**
-     * Load a simple instance of a command.
+     * Load a simple instance of a command. (Requires class to be annotated with CommandParameters and CommandPermissions)
      *
      * @param command Command instance.
      */
     public void loadCommand(AtomCommand<T> command) {
         CommandParameters params = command.getClass().getAnnotation(CommandParameters.class);
         if(params == null) {
-            plugin.getLogger().info("Not loading command " + getClass().getSimpleName() + ". Command class does not have Parameters");
+            plugin.getLogger().info("Not loading command " + getClass().getSimpleName() + ". Class does not have CommandParameters");
             return;
         }
         CommandPermissions perms = command.getClass().getAnnotation(CommandPermissions.class);
         if(perms == null) {
-            plugin.getLogger().info("Not loading command " + getClass().getSimpleName() + ". Command class does not have Permissions");
+            plugin.getLogger().info("Not loading command " + getClass().getSimpleName() + ". Class does not have CommandPermissions");
             return;
         }
 
