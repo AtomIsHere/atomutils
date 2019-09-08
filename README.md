@@ -1,4 +1,4 @@
-[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils) [![Nightly Build](https://ci.appveyor.com/api/projects/status/lix3r1pv1fo2ypyt/branch/master?svg=true)](https://ci.appveyor.com/project/AtomIsHere/atomutils/branch/master)
+[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils)
 
 
 # Atom Utils
