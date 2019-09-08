@@ -26,3 +26,8 @@
     dependencies {
         compileOnly 'com.github.AtomIsHere:atomutils:1.0.1'
     }
+
+## Downloads
+| Stable | Experimental |
+| ------ | ------------ |
+| [![Stable Download](https://img.shields.io/badge/download-stable-green)](https://github.com/AtomIsHere/atomutils/releases) | [![Experimental Download](https://img.shields.io/badge/download-experimental-red)]()
