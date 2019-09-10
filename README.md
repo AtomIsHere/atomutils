@@ -1,4 +1,4 @@
-[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils)
+[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils) [![Version](https://img.shields.io/badge/version-1.0.3-brightgreen)]()
 
 
 # Atom Utils
@@ -14,7 +14,7 @@
     <dependency>
         <groupId>com.github.AtomIsHere</groupId>
         <artifactId>atomutils</artifactId>
-        <version>1.0.1</version>
+        <version>VERSION</version>
     </dependency>
     
 ## Gradle
@@ -24,7 +24,8 @@
     }
     
     dependencies {
-        compileOnly 'com.github.AtomIsHere:atomutils:1.0.1'
+        ...
+        compileOnly 'com.github.AtomIsHere:atomutils:VERSION'
     }
 
 ## Downloads

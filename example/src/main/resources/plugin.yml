@@ -1,0 +1,8 @@
+name: ExamplePlugin
+version: ${project.version}
+main: com.github.atomishere.exampleplugin.ExamplePlugin
+api-version: 1.13
+authors: [AtomIsHere]
+description: Example for AtomUtils
+depend:
+  - AtomUtils

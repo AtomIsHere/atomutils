@@ -41,15 +41,15 @@ public abstract class AtomCommand<T extends JavaPlugin> extends BukkitCommand {
      * @param perms CommandPermissions annotation
      */
     public void setup(CommandParameters params, CommandPermissions perms) {
-        this.description = params.description();
-        this.usageMessage = params.usage().replaceFirst("<command>", getName());
+        setDescription(params.description());
+        setUsage(params.usage().replaceFirst("<command>", getName()));
 
         String[] primAl = params.aliases().split(",");
 
         List<String> aliases = Arrays.stream(primAl).collect(Collectors.toList());
         setAliases(aliases);
 
-        this.permission = plugin.getName().toLowerCase() + "." + perms.permission();
+        setPermission(plugin.getDescription().getName().toLowerCase() + "." + perms.permission());
         this.source = perms.source();
     }
 
@@ -66,7 +66,7 @@ public abstract class AtomCommand<T extends JavaPlugin> extends BukkitCommand {
         }
 
         if(!onCommand(sender, player, args)) {
-            sender.sendMessage("Usage: " + getUsage());
+            sender.sendMessage(ChatColor.RED + "Usage: " + getUsage());
         }
         return true;
     }
