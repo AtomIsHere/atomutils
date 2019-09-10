@@ -31,4 +31,4 @@
 ## Downloads
 | Stable | Experimental |
 | ------ | ------------ |
-| [![Stable Download](https://img.shields.io/badge/download-stable-green)](https://github.com/AtomIsHere/atomutils/releases) | [![Experimental Download](https://img.shields.io/badge/download-experimental-red)]()
+| [![Stable Download](https://img.shields.io/badge/download-stable-green)](https://github.com/AtomIsHere/atomutils/releases) | [![Experimental Download](https://img.shields.io/badge/download-experimental-red)](https://ci.appveyor.com/project/AtomIsHere/atomutils/build/artifacts) |
