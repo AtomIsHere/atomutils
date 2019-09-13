@@ -1,4 +1,4 @@
-[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils) [![Version](https://img.shields.io/badge/version-1.0.3-brightgreen)]()
+[![](https://jitci.com/gh/AtomIsHere/atomutils/svg)](https://jitci.com/gh/AtomIsHere/atomutils) [![Build Status](https://travis-ci.org/AtomIsHere/atomutils.svg?branch=master)](https://travis-ci.org/AtomIsHere/atomutils) [![Version](https://img.shields.io/badge/version-1.0.4-brightgreen)]()
 
 
 # Atom Utils
