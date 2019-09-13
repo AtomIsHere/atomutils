@@ -50,6 +50,7 @@ public abstract class AtomCommand<T extends JavaPlugin> extends BukkitCommand {
         setAliases(aliases);
 
         setPermission(plugin.getDescription().getName().toLowerCase() + "." + perms.permission());
+        this.permission = permission;
         this.source = perms.source();
     }
 
