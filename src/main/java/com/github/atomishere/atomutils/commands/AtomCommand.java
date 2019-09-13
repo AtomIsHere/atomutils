@@ -49,7 +49,9 @@ public abstract class AtomCommand<T extends JavaPlugin> extends BukkitCommand {
         List<String> aliases = Arrays.stream(primAl).collect(Collectors.toList());
         setAliases(aliases);
 
-        setPermission(plugin.getDescription().getName().toLowerCase() + "." + perms.permission());
+        String permission = plugin.getDescription().getName().toLowerCase() + "." + perms.permission();
+
+        setPermission(permission);
         this.permission = permission;
         this.source = perms.source();
     }
